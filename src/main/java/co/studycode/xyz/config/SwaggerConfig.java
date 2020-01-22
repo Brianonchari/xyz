@@ -26,7 +26,7 @@ public class SwaggerConfig {
     }
     private ApiInfo apiEndpointsInfo(){
 
-        return new ApiInfoBuilder().title("Blur Api")
+        return new ApiInfoBuilder().title("Chama")
                 .description("Test Api")
                 .contact(new Contact("Brian Onchari","","oncharibrian@gmail.com"))
                 .license("Apache 2.0")
