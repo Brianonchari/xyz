@@ -76,6 +76,7 @@ public class AuthController {
     })
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
+
         if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             return new ResponseEntity(new ApiResponse(false, "Email is already registered"), HttpStatus.BAD_REQUEST);
 

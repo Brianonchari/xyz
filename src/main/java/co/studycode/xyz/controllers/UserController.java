@@ -25,4 +25,7 @@ public class UserController {
     public UserSummary getCurrentUser(@CurrentUser UserPrinciple currentUser) {
         return new UserSummary(currentUser.getId(), currentUser.getFullName(), currentUser.getEmail());
     }
+
+//    @PutMapping("/user/{id}")
+//    public User updateUser()
 }
