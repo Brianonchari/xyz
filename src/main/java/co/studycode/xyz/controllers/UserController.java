@@ -1,7 +1,6 @@
 package co.studycode.xyz.controllers;
 
 
-import co.studycode.xyz.models.User;
 import co.studycode.xyz.models.UserSummary;
 import co.studycode.xyz.repositories.UserRepository;
 import co.studycode.xyz.security.CurrentUser;
@@ -30,8 +29,8 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getAllUsers(){
-        return userRepository.findAll();
+    public List<Object[]> getAllUsers(){
+        return userRepository.findAllUsers();
     }
 
 //    @PutMapping("/user/{id}")
