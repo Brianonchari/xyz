@@ -1,6 +1,7 @@
 package co.studycode.xyz.controllers;
 
 
+import co.studycode.xyz.models.User;
 import co.studycode.xyz.models.UserSummary;
 import co.studycode.xyz.repositories.UserRepository;
 import co.studycode.xyz.security.CurrentUser;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -24,6 +27,11 @@ public class UserController {
     @GetMapping("/user/me")
     public UserSummary getCurrentUser(@CurrentUser UserPrinciple currentUser) {
         return new UserSummary(currentUser.getId(), currentUser.getFullName(), currentUser.getEmail());
+    }
+
+    @GetMapping("/users")
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
 //    @PutMapping("/user/{id}")

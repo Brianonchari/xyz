@@ -42,17 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    private static final String[] AUTH_WHITELIST = {
-            // -- swagger ui
-            "/v2/api-docs",
-            "/swagger-resources",
-            "/swagger-resources/**",
-            "/configuration/ui",
-            "/configuration/security",
-            "/swagger-ui.html",
-            "/webjars/**"
-            // other public endpoints of your API may be appended to this array
-    };
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -113,6 +102,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability")
 //                .permitAll()
                 .antMatchers(HttpMethod.GET, "/api/users/me")
+                .authenticated()
+                .antMatchers("/api/users")
                 .authenticated()
                 .anyRequest()
                 .authenticated()
