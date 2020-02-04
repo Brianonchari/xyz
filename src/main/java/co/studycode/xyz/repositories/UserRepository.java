@@ -9,17 +9,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository  extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 //    public static final String FETCH_USERS = "SELECT full_name, email FROM users";
 
 
     Optional<User> findByUsernameOrEmail(String username, String email);
 
-//    @Query(value = FETCH_USERS, nativeQuery = true)
-    public List<User> findAll();
+    //    @Query(value = FETCH_USERS, nativeQuery = true)
+    List<User> findAll();
+
     Optional<User> findUserByUsername(String username);
+
     Boolean existsByEmail(String email);
+
     Boolean existsByFullName(String fullName);
 }
 

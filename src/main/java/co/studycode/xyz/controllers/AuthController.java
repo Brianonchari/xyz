@@ -69,6 +69,8 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(jwt));
     }
 
+
+
     @ApiOperation(value = "User Registration endpoint")
     @ApiResponses(value = {
             @io.swagger.annotations.ApiResponse(code = 201, message = "User registered successfully"),

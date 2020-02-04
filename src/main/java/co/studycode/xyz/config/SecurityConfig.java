@@ -105,6 +105,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .antMatchers("/api/users")
                 .authenticated()
+                .antMatchers("/api/transactions/createtransaction")
+                .authenticated()
                 .anyRequest()
                 .authenticated()
                 .and()
