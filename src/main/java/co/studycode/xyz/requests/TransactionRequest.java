@@ -4,16 +4,8 @@ public class TransactionRequest {
 
     private String phone;
     private String amount;
-    private String user;
 
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public String getPhone() {
         return phone;
