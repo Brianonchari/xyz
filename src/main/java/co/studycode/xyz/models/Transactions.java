@@ -17,18 +17,18 @@ public class Transactions {
     private String amount;
 
 //    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "member_transactions",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
-    private String user;
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
+//    @JoinTable(name = "member_transactions",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
+//    private String user;
+//
+//    public String getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(String user) {
+//        this.user = user;
+//    }
 
     public Transactions() {
     }
